@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Monthly Starter Pack branding card</title>
+  <desc id="desc">A modern emerald branding card for the Monthly Starter Pack with modular panels, clean type and practical content system cues.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b453d"/>
+      <stop offset="58%" stop-color="#177866"/>
+      <stop offset="100%" stop-color="#38b08d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="16%" cy="16%" r="70%">
+      <stop offset="0%" stop-color="#a5ffd6" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#a5ffd6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b2c24"/>
+      <stop offset="100%" stop-color="#11453b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#061d18" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 24px 'Segoe UI', Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+      .display { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 900; letter-spacing: -2px; }
+      .body { font: 700 28px 'Segoe UI', Arial, sans-serif; }
+      .chip { font: 700 24px 'Segoe UI', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" rx="56" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="56" fill="url(#glow)"/>
+  <circle cx="1280" cy="200" r="178" fill="#eafff5" opacity="0.08"/>
+  <circle cx="170" cy="846" r="170" fill="#b9ffe0" opacity="0.12"/>
+  <path d="M0 858c248-94 476-92 698 2s442 92 902-28V1000H0z" fill="rgba(255,255,255,0.08)"/>
+
+  <text x="88" y="96" class="eyebrow" fill="#e7fff6">ThemeStudios package series</text>
+  <text x="88" y="220" class="display" font-size="128" fill="#ffffff">MONTHLY</text>
+  <text x="88" y="346" class="display" font-size="138" fill="#bdf7a0">STARTER</text>
+  <text x="88" y="468" class="display" font-size="126" fill="#ffffff">PACK</text>
+  <text x="90" y="560" class="body" fill="#e7fff6">A practical recurring package for shops, salons, clinics and smaller weekly promotions.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1040" y="108" width="454" height="784" rx="46" fill="url(#panel)" stroke="rgba(255,255,255,0.18)" stroke-width="3"/>
+    <rect x="1092" y="166" width="138" height="138" rx="28" fill="rgba(255,255,255,0.09)"/>
+    <rect x="1248" y="166" width="138" height="138" rx="28" fill="rgba(255,255,255,0.07)"/>
+    <rect x="1092" y="322" width="138" height="138" rx="28" fill="rgba(255,255,255,0.07)"/>
+    <rect x="1248" y="322" width="138" height="138" rx="28" fill="rgba(255,255,255,0.09)"/>
+    <circle cx="1161" cy="235" r="32" fill="#ffd06e"/>
+    <path d="M1151 214h20M1161 204v20" stroke="#0f3a31" stroke-width="7" stroke-linecap="round"/>
+    <rect x="1290" y="210" width="54" height="50" rx="16" fill="#eafff5"/>
+    <path d="M1304 188h26M1317 188v18" stroke="#eafff5" stroke-width="8" stroke-linecap="round"/>
+    <path d="M1140 384h46M1140 404h46M1140 424h28" stroke="#9ceac9" stroke-width="9" stroke-linecap="round"/>
+    <path d="M1288 386l18 18 32-40" fill="none" stroke="#bdf7a0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1146" y="530" width="244" height="154" rx="30" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="1182" y="586" class="eyebrow" fill="#bdf7a0" style="font-size:18px">Weekly flow</text>
+    <text x="1182" y="640" class="display" font-size="54" fill="#ffffff">READY</text>
+    <text x="1182" y="688" class="body" fill="#dcfff0" style="font-size:24px">Simple, steady, useful content rhythm</text>
+  </g>
+
+  <g>
+    <rect x="88" y="728" width="196" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="132" y="782" class="chip" fill="#ffffff">8 posters</text>
+    <rect x="308" y="728" width="208" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="350" y="782" class="chip" fill="#ffffff">2 festive</text>
+    <rect x="540" y="728" width="244" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="584" y="782" class="chip" fill="#ffffff">30-day flow</text>
+  </g>
+</svg>

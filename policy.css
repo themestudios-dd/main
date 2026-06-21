@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --bg: #050b0b;
+  --bg-soft: #091112;
+  --surface: rgba(8, 16, 17, 0.82);
+  --surface-strong: rgba(9, 18, 18, 0.94);
+  --text-main: #f5f7f2;
+  --text-soft: #dbe3da;
+  --text-muted: #a8b3a9;
+  --gold: #f2cb72;
+  --teal: #2feccf;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --shadow-soft: 0 18px 48px rgba(0, 0, 0, 0.22);
+  --shadow-strong: 0 28px 72px rgba(0, 0, 0, 0.34);
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  color: var(--text-soft);
+  background: var(--bg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 500;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at top left, rgba(240, 201, 110, 0.14), transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(34, 211, 190, 0.14), transparent 26%),
+    linear-gradient(180deg, #040909 0%, #091112 52%, #050b0b 100%);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(240, 201, 110, 0.08), transparent 26%),
+    radial-gradient(circle at 90% 40%, rgba(34, 211, 190, 0.08), transparent 20%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: radial-gradient(circle at center, black, transparent 85%);
+  opacity: 0.24;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(34, 211, 190, 0.3);
+  color: #ffffff;
+}
+
+.policy-shell {
+  width: min(1040px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.policy-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(8, 16, 17, 0.94), rgba(5, 11, 11, 0.82)),
+    var(--surface);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.brand-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.brand-tagline {
+  margin: 0.15rem 0 0;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.policy-nav {
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.policy-nav a {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.policy-nav a:hover,
+.policy-nav a:focus-visible,
+.policy-nav a.is-active {
+  color: var(--text-main);
+  border-color: var(--teal);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  color: #061111;
+  background: linear-gradient(135deg, #2feccf, #f2cb72);
+  box-shadow: 0 14px 30px rgba(27, 208, 190, 0.22);
+  border-color: rgba(47, 236, 207, 0.3);
+}
+
+.button-secondary {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--line);
+}
+
+.policy-main {
+  padding: 3rem 0 0;
+}
+
+.policy-hero,
+.policy-card,
+.toc-card,
+.policy-footer {
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(13, 22, 22, 0.92), rgba(6, 12, 12, 0.78)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.policy-hero {
+  padding: clamp(1.75rem, 4vw, 2.7rem);
+  background:
+    radial-gradient(circle at top right, rgba(47, 236, 207, 0.14), transparent 38%),
+    radial-gradient(circle at bottom left, rgba(242, 203, 114, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(13, 22, 22, 0.94), rgba(6, 12, 12, 0.8));
+}
+
+.eyebrow {
+  margin: 0 0 0.9rem;
+  color: #2feccf;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+
+.policy-title {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 6vw, 4.1rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.policy-description {
+  margin: 1.2rem 0 0;
+  max-width: 50rem;
+  color: var(--text-soft);
+  font-size: 1.04rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.hero-meta span,
+.notice {
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 236, 207, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-soft);
+  font-size: 0.93rem;
+}
+
+.content-stack {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.toc-card,
+.policy-card,
+.policy-footer {
+  padding: 1.5rem;
+}
+
+.toc-card h2,
+.policy-card h2,
+.policy-footer h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+}
+
+.toc-list,
+.policy-list,
+.contact-list,
+.inline-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.toc-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.toc-list a {
+  display: inline-flex;
+  color: var(--text-soft);
+  transition: color 180ms ease;
+}
+
+.toc-list a:hover,
+.toc-list a:focus-visible {
+  color: var(--teal);
+}
+
+.policy-card p,
+.policy-card li,
+.policy-footer p,
+.policy-footer li {
+  color: var(--text-soft);
+}
+
+.policy-card p + p,
+.policy-footer p + p {
+  margin-top: 0.9rem;
+}
+
+.policy-list,
+.contact-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.policy-list li,
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.bullet {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: 0.55rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #2feccf, #f2cb72);
+}
+
+.policy-card a,
+.policy-footer a {
+  color: var(--teal);
+}
+
+.highlight {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.inline-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+}
+
+.policy-footer {
+  margin-top: 1.2rem;
+}
+
+.policy-footer-meta {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 980px) {
+  .policy-header {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .policy-nav {
+    justify-content: flex-start;
+  }
+
+  .policy-header .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .policy-shell {
+    width: min(100% - 1rem, 1040px);
+  }
+
+  .policy-main {
+    padding-top: 2rem;
+  }
+
+  .hero-meta,
+  .inline-links {
+    flex-direction: column;
+  }
+
+  .hero-meta span,
+  .inline-links a,
+  .button {
+    width: 100%;
+  }
+
+  .policy-title {
+    font-size: clamp(2rem, 12vw, 3.1rem);
+  }
+}

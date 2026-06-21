@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Festival Poster branding card</title>
+  <desc id="desc">A modern festive branding card in saffron and coral with bold typography, celebratory geometry and seasonal campaign energy.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a3331c"/>
+      <stop offset="58%" stop-color="#d55b20"/>
+      <stop offset="100%" stop-color="#f49d2f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="18%" cy="16%" r="70%">
+      <stop offset="0%" stop-color="#fff0ba" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#fff0ba" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a2418"/>
+      <stop offset="100%" stop-color="#ad321b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1c3"/>
+      <stop offset="100%" stop-color="#ffd56d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#6d1f15" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 24px 'Segoe UI', Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+      .display { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 900; letter-spacing: -2px; }
+      .body { font: 700 28px 'Segoe UI', Arial, sans-serif; }
+      .chip { font: 700 24px 'Segoe UI', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" rx="56" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="56" fill="url(#glow)"/>
+  <circle cx="1328" cy="176" r="176" fill="#fff5d7" opacity="0.1"/>
+  <circle cx="162" cy="840" r="170" fill="#ffd56d" opacity="0.12"/>
+  <path d="M0 858c238-86 472-86 710 0s434 86 890-22V1000H0z" fill="rgba(255,255,255,0.08)"/>
+
+  <text x="88" y="96" class="eyebrow" fill="#fff6e2">ThemeStudios package series</text>
+  <text x="88" y="232" class="display" font-size="132" fill="#ffffff">FESTIVAL</text>
+  <text x="88" y="354" class="display" font-size="128" fill="url(#gold)">POSTER</text>
+  <text x="90" y="446" class="body" fill="#fff7ec">Seasonal greeting creatives and special-day offer layouts designed to feel warm and memorable.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1040" y="108" width="454" height="784" rx="46" fill="url(#panel)" stroke="rgba(255,255,255,0.16)" stroke-width="3"/>
+    <circle cx="1268" cy="320" r="112" fill="none" stroke="rgba(255,240,195,0.2)" stroke-width="10"/>
+    <path d="M1268 226l22 54h58l-46 34 16 56-50-34-50 34 16-56-46-34h58z" fill="url(#gold)"/>
+    <path d="M1162 510c24-48 62-74 106-74 44 0 82 26 106 74-30-12-66-18-106-18-40 0-76 6-106 18z" fill="#ffb25a"/>
+    <path d="M1208 494c14-34 34-50 60-50 26 0 46 16 60 50-18-8-38-12-60-12-22 0-42 4-60 12z" fill="#fff1c3"/>
+    <path d="M1268 396c26 28 30 56 0 86-30-30-26-58 0-86z" fill="#fff9ec"/>
+    <path d="M1268 420c12 16 14 30 0 46-14-16-12-30 0-46z" fill="#f39a2f"/>
+    <rect x="1136" y="596" width="264" height="126" rx="30" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="1174" y="652" class="display" font-size="46" fill="#ffffff">SEASON READY</text>
+    <text x="1174" y="700" class="body" fill="#fff2d8" style="font-size:24px">Warm, celebratory and quick to share</text>
+  </g>
+
+  <g>
+    <rect x="88" y="728" width="242" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="132" y="782" class="chip" fill="#ffffff">Wish creatives</text>
+    <rect x="354" y="728" width="248" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="396" y="782" class="chip" fill="#ffffff">Seasonal offers</text>
+    <rect x="626" y="728" width="238" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="670" y="782" class="chip" fill="#ffffff">Quick delivery</text>
+  </g>
+</svg>

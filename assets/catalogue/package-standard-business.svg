@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Standard Business Poster branding card</title>
+  <desc id="desc">A modern slate and amber branding card for the Standard Business Poster with structured layout cues and practical promotional framing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#192534"/>
+      <stop offset="58%" stop-color="#27384d"/>
+      <stop offset="100%" stop-color="#4a3726"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="18%" cy="18%" r="70%">
+      <stop offset="0%" stop-color="#ffc86e" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffc86e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111c29"/>
+      <stop offset="100%" stop-color="#1f2c39"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe3a0"/>
+      <stop offset="100%" stop-color="#f1a73f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0b1118" flood-opacity="0.3"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 24px 'Segoe UI', Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+      .display { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 900; letter-spacing: -2px; }
+      .body { font: 700 28px 'Segoe UI', Arial, sans-serif; }
+      .chip { font: 700 24px 'Segoe UI', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" rx="56" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="56" fill="url(#glow)"/>
+  <circle cx="1328" cy="176" r="170" fill="#ffffff" opacity="0.06"/>
+  <circle cx="168" cy="848" r="170" fill="#ffc86e" opacity="0.08"/>
+  <path d="M0 864c230-82 462-82 700 4s436 86 900-24V1000H0z" fill="rgba(255,255,255,0.08)"/>
+
+  <text x="88" y="96" class="eyebrow" fill="#f0f5fb">ThemeStudios package series</text>
+  <text x="88" y="220" class="display" font-size="118" fill="#ffffff">STANDARD</text>
+  <text x="88" y="340" class="display" font-size="140" fill="url(#gold)">BUSINESS</text>
+  <text x="88" y="462" class="display" font-size="126" fill="#ffffff">POSTER</text>
+  <text x="90" y="560" class="body" fill="#eef5fb">A reliable promotional tier for menus, offers, service updates and everyday campaign needs.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1040" y="108" width="454" height="784" rx="46" fill="url(#panel)" stroke="rgba(255,255,255,0.16)" stroke-width="3"/>
+    <rect x="1112" y="176" width="310" height="96" rx="26" fill="rgba(255,255,255,0.08)"/>
+    <text x="1150" y="234" class="display" font-size="54" fill="#ffffff">EVERYDAY SALE</text>
+    <rect x="1112" y="314" width="140" height="176" rx="28" fill="rgba(255,255,255,0.06)"/>
+    <rect x="1278" y="314" width="144" height="176" rx="28" fill="rgba(255,255,255,0.1)"/>
+    <path d="M1144 368h76M1144 404h76M1144 440h56" stroke="#97bad8" stroke-width="12" stroke-linecap="round"/>
+    <path d="M1310 368l24 24 44-56" fill="none" stroke="#ffd07d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1124" y="560" width="286" height="124" rx="30" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="1202" cy="622" r="32" fill="#f2a53e"/>
+    <rect x="1248" y="598" width="126" height="16" rx="8" fill="#ffffff"/>
+    <rect x="1248" y="630" width="96" height="16" rx="8" fill="#9ebbd4"/>
+    <text x="1148" y="742" class="body" fill="#eef5fb" style="font-size:24px">Structured layouts for repeat business promotion</text>
+  </g>
+
+  <g>
+    <rect x="88" y="728" width="214" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="132" y="782" class="chip" fill="#ffffff">Structured</text>
+    <rect x="324" y="728" width="228" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="368" y="782" class="chip" fill="#ffffff">2 revisions</text>
+    <rect x="576" y="728" width="234" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="620" y="782" class="chip" fill="#ffffff">Fast delivery</text>
+  </g>
+</svg>

@@ -85,7 +85,7 @@ CONTACT_TO_NAME=ThemeStudios Support
 
 ## Hostinger deployment
 
-This repo is set up for static deployment to Hostinger shared hosting with PHP contact handling.
+This repo is set up for Hostinger shared hosting with PHP contact handling.
 
 Why this path:
 
@@ -93,24 +93,30 @@ Why this path:
 - The contact form depends on `public/api/contact.php`
 - That PHP endpoint fits shared hosting / Apache deployment better than Hostinger Node.js app hosting
 
+### Important branch rule
+
+Do not point Hostinger Git deployment at `main`.
+
+- `main` is the source branch
+- `deploy` is the production branch
+
+Hostinger Git deployment should use:
+
+- Branch: `deploy`
+- Root directory: `public_html`
+
 The GitHub Actions workflow is:
 
 - `.github/workflows/deploy-hostinger.yml`
 
-It builds the site and deploys the contents of `dist/` to Hostinger over FTPS whenever `main` changes.
+It builds the site from `main` and force-pushes the production-ready `dist/` output into the `deploy` branch whenever `main` changes.
 
 ### Required GitHub repository secrets
 
-Add these in GitHub:
+Only add these if you want build-time values to be available in GitHub Actions:
 
-- `HOSTINGER_FTP_SERVER`
-- `HOSTINGER_FTP_USERNAME`
-- `HOSTINGER_FTP_PASSWORD`
 - `MAILJET_API_KEY`
 - `MAILJET_API_SECRET`
-
-Optional but recommended:
-
 - `MAILJET_FROM_EMAIL`
 - `MAILJET_FROM_NAME`
 - `CONTACT_TO_EMAIL`
@@ -119,26 +125,24 @@ Optional but recommended:
 - `VITE_META_PIXEL_ID`
 - `VITE_ENABLE_META_PIXEL`
 
-The workflow assumes the Hostinger web root is `/public_html/`.
+The workflow intentionally removes `dist/.env` before publishing the `deploy` branch so secrets are not committed into Git history.
 
-If your site uses a different target directory, update:
+### One-time Hostinger setup
 
-- `.github/workflows/deploy-hostinger.yml`
+Create a server-side `.env` file manually in:
 
-### One-time setup still required outside the repo
+- `public_html/.env`
 
-Before automatic deployment can work, complete these two dashboard steps:
+Use the same Mailjet values from your local `.env` file there. The live PHP endpoint reads that file directly on Hostinger.
 
-1. In GitHub, open the repository Actions secrets page and add the required secret names listed above.
-2. In Hostinger hPanel, open the website dashboard for `themestudios.in`, then go to `Files -> FTP Accounts` and copy the FTP host, FTP username, and reset or create the FTP password you want GitHub Actions to use.
+After that:
 
-Suggested mapping:
+1. Keep Hostinger Git auto-deployment enabled
+2. Switch the deployed branch from `main` to `deploy`
+3. Keep the root directory as `public_html`
+4. Redeploy once
 
-- `HOSTINGER_FTP_SERVER` -> Hostinger FTP host or FTP IP
-- `HOSTINGER_FTP_USERNAME` -> Hostinger FTP username
-- `HOSTINGER_FTP_PASSWORD` -> Hostinger FTP password
-
-Once those secrets are saved, every push to `main` will trigger a fresh build and deployment.
+From then on, every push to `main` will rebuild the site and refresh the `deploy` branch automatically.
 
 ## Important deployment note
 

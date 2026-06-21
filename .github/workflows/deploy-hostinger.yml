@@ -1,4 +1,4 @@
-name: Deploy Hostinger
+name: Publish Hostinger Deploy Branch
 
 on:
   push:
@@ -7,10 +7,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  publish-deploy-branch:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     env:
       VITE_FACEBOOK_PAGE_URL: ${{ secrets.VITE_FACEBOOK_PAGE_URL }}
       VITE_META_PIXEL_ID: ${{ secrets.VITE_META_PIXEL_ID }}
@@ -21,9 +21,6 @@ jobs:
       MAILJET_FROM_NAME: ${{ secrets.MAILJET_FROM_NAME }}
       CONTACT_TO_EMAIL: ${{ secrets.CONTACT_TO_EMAIL }}
       CONTACT_TO_NAME: ${{ secrets.CONTACT_TO_NAME }}
-      HOSTINGER_FTP_SERVER: ${{ secrets.HOSTINGER_FTP_SERVER }}
-      HOSTINGER_FTP_USERNAME: ${{ secrets.HOSTINGER_FTP_USERNAME }}
-      HOSTINGER_FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,33 +31,28 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Validate deployment secrets
-        run: |
-          missing=()
-          for key in HOSTINGER_FTP_SERVER HOSTINGER_FTP_USERNAME HOSTINGER_FTP_PASSWORD MAILJET_API_KEY MAILJET_API_SECRET; do
-            if [ -z "${!key}" ]; then
-              missing+=("$key")
-            fi
-          done
-
-          if [ "${#missing[@]}" -gt 0 ]; then
-            echo "Missing required GitHub secrets: ${missing[*]}" >&2
-            exit 1
-          fi
-
       - name: Install dependencies
         run: npm ci
 
       - name: Build production site
         run: npm run build
 
-      - name: Deploy dist to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
-          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
-          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./dist/
-          server-dir: /public_html/
+      - name: Remove packaged server secrets from deploy branch
+        run: rm -f dist/.env
+
+      - name: Publish dist to deploy branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -rf /tmp/hostinger-deploy
+          mkdir -p /tmp/hostinger-deploy
+          cp -R dist/. /tmp/hostinger-deploy/
+
+          cd /tmp/hostinger-deploy
+          git init -b deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy from ${GITHUB_SHA}"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin deploy

@@ -125,6 +125,21 @@ If your site uses a different target directory, update:
 
 - `.github/workflows/deploy-hostinger.yml`
 
+### One-time setup still required outside the repo
+
+Before automatic deployment can work, complete these two dashboard steps:
+
+1. In GitHub, open the repository Actions secrets page and add the required secret names listed above.
+2. In Hostinger hPanel, open the website dashboard for `themestudios.in`, then go to `Files -> FTP Accounts` and copy the FTP host, FTP username, and reset or create the FTP password you want GitHub Actions to use.
+
+Suggested mapping:
+
+- `HOSTINGER_FTP_SERVER` -> Hostinger FTP host or FTP IP
+- `HOSTINGER_FTP_USERNAME` -> Hostinger FTP username
+- `HOSTINGER_FTP_PASSWORD` -> Hostinger FTP password
+
+Once those secrets are saved, every push to `main` will trigger a fresh build and deployment.
+
 ## Important deployment note
 
 The current contact form backend is PHP-based.

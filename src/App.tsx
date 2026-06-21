@@ -39,7 +39,7 @@ import {
 } from './tracking'
 
 type StoryCard = {
-  accentClass: string
+  alt: string
   category: string
   image: string
   summary: string
@@ -55,6 +55,8 @@ const contactFormActionPath = '/api/contact.php'
 const packageRail = featuredOfferCards
 const contactCatalogSummary =
   `${publicOfferCount} active services and packs across posters, reels, branding, ads support, and monthly systems.`
+const heroPortfolioBoard = '/assets/portfolio/business-portfolio-2026.webp'
+const coreServicesBoard = '/assets/portfolio/about-core-services.webp'
 
 const whatsappIntro = [
   'Hi ThemeStudios, I need the right service or package for my business.',
@@ -102,28 +104,36 @@ const industryCards = industryOfferCards.map((item) => ({
 
 const storyCards: StoryCard[] = [
   {
-    accentClass: 'story-offer',
-    category: 'Fast-turn promotion',
-    image: '/assets/catalogue/story-offer-campaigns.webp',
-    title: 'One studio for posters, stories, covers, and quick daily promotion',
+    alt: 'ThemeStudios clinic, healthcare and startup business packages board',
+    category: 'Clinic + startup packs',
+    image: '/assets/portfolio/clinic-startup-packages.webp',
+    title: 'Clinic, healthcare, and startup packages now use the real portfolio board',
     summary:
-      'ThemeStudios helps businesses move faster on everyday visibility with clear layouts for offers, launches, menus, notices, and social updates.',
+      'This board now represents the live clinic, healthcare, and startup lane, including trust-building monthly packs, healthcare branding, launch packs, and startup growth support.',
   },
   {
-    accentClass: 'story-festival',
-    category: 'Branding and launch kits',
-    image: '/assets/catalogue/story-festival-calendars.webp',
-    title: 'Launch-ready branding support for startups and established local brands',
+    alt: 'ThemeStudios restaurant, food and salon beauty packages board',
+    category: 'Food + beauty packs',
+    image: '/assets/portfolio/restaurant-salon-packages.webp',
+    title: 'Restaurant, food, salon, and beauty packages now match the actual offer boards',
     summary:
-      'From logo systems to stationery kits and industry-specific branding packs, the service ladder now covers one-time identity work as well as campaign visuals.',
+      'The website now shows the correct package board for food businesses, restaurants, salons, beauty studios, bridal campaigns, and menu or branding support.',
   },
   {
-    accentClass: 'story-monthly',
-    category: 'Monthly systems',
-    image: '/assets/catalogue/story-monthly-systems.webp',
-    title: 'Monthly support packs built around real campaign volume',
+    alt: 'ThemeStudios real estate, construction and retail local shop packages board',
+    category: 'Construction + retail packs',
+    image: '/assets/portfolio/construction-retail-packages.webp',
+    title: 'Construction, real estate, retail, and local shop packs now include the missing live services',
     summary:
-      'Businesses can now choose monthly support by brand size or by industry, with recurring content systems for clinics, restaurants, salons, retail, education, startups, and more.',
+      'Builder Branding Pack, Festival Sales Pack, and WhatsApp Catalog Pack were added into the live catalog so the real estate and retail boards now match the website data.',
+  },
+  {
+    alt: 'ThemeStudios education and training packages board with final notes and contact details',
+    category: 'Education packs',
+    image: '/assets/portfolio/education-packages-contact.webp',
+    title: 'Education and training packages now include the live institute branding lane',
+    summary:
+      'The education board is now reflected on the site with starter, campaign, institute branding, and monthly education growth options aligned to the latest pricing.',
   },
 ]
 
@@ -427,13 +437,13 @@ function App({ pathname }: { pathname?: string }) {
                 <span className="visual-chip visual-chip-top">{heroStartingPrice}</span>
                 <div className="hero-visual-frame">
                   <picture>
-                    <source srcSet="/assets/branding/hero-frame.webp" type="image/webp" />
+                    <source srcSet={heroPortfolioBoard} type="image/webp" />
                     <img
                       className="hero-visual-image"
-                      src="/assets/branding/hero-frame.png"
-                      alt="ThemeStudios design package overview"
-                      width="1400"
-                      height="1120"
+                      src={heroPortfolioBoard.replace('.webp', '.png')}
+                      alt="ThemeStudios business portfolio 2026 pricing and services board"
+                      width="1181"
+                      height="1772"
                       fetchPriority="high"
                     />
                   </picture>
@@ -487,12 +497,40 @@ function App({ pathname }: { pathname?: string }) {
 
         <section className="section proof-section">
           <div className="section-shell">
-            <div className="section-intro section-intro-centered">
-              <p className="eyebrow">What you can book</p>
-              <h2 className="section-title">
-                The current catalog now covers fast creatives, brand systems, ads support, and
-                monthly content
-              </h2>
+            <div className="poster-feature-layout">
+              <div className="poster-feature-copy">
+                <p className="eyebrow">About and core services</p>
+                <h2 className="section-title">
+                  The website visuals now follow the actual 2026 portfolio boards
+                </h2>
+                <p className="section-copy">
+                  The core services board is now part of the homepage so visitors see the real
+                  ThemeStudios service lanes: posters, social creatives, reels, branding, ad
+                  support, business profile work, and website visuals.
+                </p>
+                <p className="section-copy">
+                  Missing packs from the attached portfolio were also added to the live catalog,
+                  including Builder Branding Pack, Festival Sales Pack, WhatsApp Catalog Pack, and
+                  Institute Branding Pack.
+                </p>
+              </div>
+
+              <div className="poster-feature-media">
+                <div className="poster-feature-frame">
+                  <picture>
+                    <source srcSet={coreServicesBoard} type="image/webp" />
+                    <img
+                      className="poster-feature-image"
+                      src={coreServicesBoard.replace('.webp', '.png')}
+                      alt="ThemeStudios about and core services board"
+                      loading="lazy"
+                      width="1181"
+                      height="1772"
+                      sizes="(max-width: 860px) 100vw, 38vw"
+                    />
+                  </picture>
+                </div>
+              </div>
             </div>
 
             <div className="industry-grid">
@@ -513,14 +551,14 @@ function App({ pathname }: { pathname?: string }) {
         <section className="section solutions-section" id="packages">
           <div className="section-shell">
             <div className="section-intro">
-              <p className="eyebrow">Package portfolio</p>
+              <p className="eyebrow">Pricing boards</p>
               <h2 className="section-title">
-                Start with the service lane that matches your next campaign
+                The main service cards now use the real pricing pages instead of placeholder art
               </h2>
               <p className="section-copy">
-                These are the strongest public entry points across the new catalog: quick poster
-                support, reel production, branding systems, ads creatives, and higher-coverage
-                monthly plans.
+                These boards now match the attached portfolio exactly: individual design pricing,
+                reels and branding, profile and ads support, and the universal monthly package
+                ladder.
               </p>
               <a
                 className="text-link"
@@ -536,13 +574,19 @@ function App({ pathname }: { pathname?: string }) {
 
             <div className="solutions-rail">
               {packageRail.map((item) => (
-                <article className={`solution-card ${item.themeClass}`} key={item.name}>
+                <article className="solution-card" key={item.name}>
                   <div className="solution-media">
-                    <div className="package-poster">
-                      <p className="package-poster-label">{item.posterLabel}</p>
-                      <h3 className="package-poster-title">{item.posterTitle}</h3>
-                      <p className="package-poster-tagline">{item.posterTagline}</p>
-                    </div>
+                    <picture>
+                      <source srcSet={item.image} type="image/webp" />
+                      <img
+                        src={item.image.replace('.webp', '.png')}
+                        alt={item.imageAlt}
+                        loading="lazy"
+                        width="1181"
+                        height="1772"
+                        sizes="(max-width: 860px) 100vw, 22vw"
+                      />
+                    </picture>
                   </div>
 
                   <div className="solution-copy">
@@ -630,29 +674,29 @@ function App({ pathname }: { pathname?: string }) {
         <section className="section stories-section">
           <div className="section-shell">
             <div className="section-intro">
-              <p className="eyebrow">How we help</p>
+              <p className="eyebrow">Industry boards</p>
               <h2 className="section-title">
-                Creative support shaped around the formats businesses actually buy now
+                Industry package pages now use the correct attached poster designs
               </h2>
               <p className="section-copy">
-                ThemeStudios is no longer just a poster service. The current system covers quick
-                one-time work, launch kits, ad-ready assets, and structured monthly support.
+                The homepage now shows the actual industry boards for healthcare, startup, food,
+                salon, retail, construction, and education instead of unrelated sample graphics.
               </p>
             </div>
 
             <div className="story-grid">
               {storyCards.map((item) => (
-                <article className={`story-card ${item.accentClass}`} key={item.title}>
+                <article className="story-card" key={item.title}>
                   <div className="story-image-wrap">
                     <picture>
                       <source srcSet={item.image} type="image/webp" />
                       <img
                         src={item.image.replace('.webp', '.png')}
-                        alt={item.title}
+                        alt={item.alt}
                         loading="lazy"
-                        width="1400"
-                        height="1120"
-                        sizes="(max-width: 860px) 100vw, 31vw"
+                        width="1181"
+                        height="1772"
+                        sizes="(max-width: 860px) 100vw, 47vw"
                       />
                     </picture>
                   </div>

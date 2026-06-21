@@ -13,6 +13,16 @@ const imageEntries = [
   'public/assets/catalogue/story-offer-campaigns.png',
   'public/assets/catalogue/story-festival-calendars.png',
   'public/assets/catalogue/story-monthly-systems.png',
+  'public/assets/portfolio/business-portfolio-2026.png',
+  'public/assets/portfolio/about-core-services.png',
+  'public/assets/portfolio/posters-social-pricing.png',
+  'public/assets/portfolio/reels-branding-pricing.png',
+  'public/assets/portfolio/business-profile-ad-pricing.png',
+  'public/assets/portfolio/universal-monthly-packages.png',
+  'public/assets/portfolio/clinic-startup-packages.png',
+  'public/assets/portfolio/restaurant-salon-packages.png',
+  'public/assets/portfolio/construction-retail-packages.png',
+  'public/assets/portfolio/education-packages-contact.png',
 ]
 
 for (const sourceFile of imageEntries) {

@@ -1953,20 +1953,29 @@
 
 .hero-visual-frame {
   overflow: hidden;
+  padding: 0.45rem;
   border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(7, 24, 52, 0.94);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     0 1.4rem 2.6rem rgba(7, 24, 52, 0.18);
 }
 
 .hero-visual-frame picture {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-visual-image {
-  min-height: 20rem;
-  border-radius: 1.2rem;
+  display: block;
+  width: min(100%, 27rem);
+  height: auto;
+  min-height: 0;
+  margin: 0 auto;
+  border-radius: 1rem;
+  object-fit: contain;
+  object-position: center top;
+  background: transparent;
 }
 
 .hero-signature {
@@ -2127,22 +2136,26 @@
 .solution-media {
   align-self: stretch;
   overflow: hidden;
+  display: grid;
+  place-items: center;
   border-radius: 1.1rem;
-  aspect-ratio: 940 / 1672;
-  padding: 0;
+  aspect-ratio: 1181 / 1772;
+  padding: 0.65rem;
   background: rgba(7, 24, 52, 0.92);
   box-shadow: 0 1.2rem 2rem rgba(16, 46, 92, 0.14);
 }
 
 .solution-media picture {
   display: block;
+  width: 100%;
   height: 100%;
 }
 
 .solution-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border-radius: 0.8rem;
+  object-fit: contain;
   object-position: center top;
 }
 
@@ -2161,6 +2174,41 @@
 
 .proof-section {
   padding-top: 4.2rem;
+}
+
+.poster-feature-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 1.35rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.poster-feature-copy {
+  max-width: 36rem;
+}
+
+.poster-feature-frame {
+  overflow: hidden;
+  padding: 0.75rem;
+  border-radius: 1.35rem;
+  background: rgba(7, 24, 52, 0.96);
+  box-shadow: 0 1.25rem 2.6rem rgba(16, 46, 92, 0.14);
+}
+
+.poster-feature-frame picture {
+  display: block;
+}
+
+.poster-feature-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.95rem;
+}
+
+.proof-section .industry-grid {
+  margin-top: 1.5rem;
 }
 
 .industry-grid {
@@ -2210,7 +2258,7 @@
     linear-gradient(90deg, rgba(7, 22, 48, 0.54) 0%, rgba(7, 22, 48, 0.12) 56%),
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 22%),
     linear-gradient(135deg, rgba(28, 105, 215, 0.9) 0%, rgba(43, 123, 234, 0.88) 100%),
-    url('/assets/catalogue/story-monthly-systems.webp') center / cover no-repeat;
+    url('/assets/portfolio/universal-monthly-packages.webp') center top / cover no-repeat;
   box-shadow: 0 1.4rem 3rem rgba(16, 46, 92, 0.16);
 }
 
@@ -2219,6 +2267,7 @@
 }
 
 .story-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -2230,19 +2279,22 @@
 
 .story-image-wrap {
   overflow: hidden;
-  aspect-ratio: 1.25 / 1;
+  aspect-ratio: 1181 / 1772;
+  padding: 0.65rem;
   background: rgba(7, 24, 52, 0.92);
 }
 
 .story-image-wrap picture {
   display: block;
+  width: 100%;
   height: 100%;
 }
 
 .story-image-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center top;
 }
 
 .story-copy {
@@ -2662,6 +2714,14 @@
     grid-template-columns: 1fr;
   }
 
+  .poster-feature-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-media {
+    width: min(100%, 13rem);
+  }
+
   .footer-bottom {
     flex-direction: column;
   }
@@ -2696,6 +2756,10 @@
 
   .feature-band-card {
     padding: 2rem 1.4rem;
+  }
+
+  .solution-media {
+    width: min(100%, 12.25rem);
   }
 
   .story-image-wrap,

@@ -13,14 +13,12 @@ export type FeaturedOfferCard = {
   audience: string
   delivery: string
   highlights: string[]
+  image: string
+  imageAlt: string
   name: string
   note?: string
-  posterLabel: string
-  posterTagline: string
-  posterTitle: string
   price: string
   summary: string
-  themeClass: string
 }
 
 export type OfferCategoryCard = {
@@ -99,10 +97,14 @@ Salon Branding Kit|One-time Package|Salon/Beauty|One-time|16999|Branding|Logo, c
 Construction Starter Pack|Monthly Package|Real Estate/Construction|Monthly|7999|Monthly Support|6 service posters, 2 before and after style posters, 2 stories and profile banner.|
 Real Estate Listing Pack|Monthly Package|Real Estate/Construction|Monthly|12999|Monthly Support|8 property posters, 2 carousels, 2 reel covers and enquiry CTA creatives.|
 Interior / Texture Painting Pack|Monthly Package|Real Estate/Construction|Monthly|14999|Monthly Support|10 service posters, 3 before and after creatives, 2 engineer or architect pitch posters and 2 reel covers.|
+Builder Branding Pack|Monthly Package|Real Estate/Construction|Monthly|24999|Monthly Support|Logo, company profile page, visiting card, 8 business creatives and service brochure design.|
 Local Shop Starter Pack|Monthly Package|Retail/Local Shop|Monthly|4999|Monthly Support|6 offer posters, 2 festival posters, 2 stories and WhatsApp status creative.|
 Retail Monthly Pack|Monthly Package|Retail/Local Shop|Monthly|9999|Monthly Support|12 posters, 4 stories, 2 carousels, offer or festival creatives and captions.|
+Festival Sales Pack|Monthly Package|Retail/Local Shop|Monthly|7999|Monthly Support|8 offer posters, 4 stories, 2 carousels and 2 ad creatives.|
+WhatsApp Catalog Pack|Monthly Package|Retail/Local Shop|Monthly|4999|Monthly Support|10 catalog images, catalog cover, offer banner and profile image.|
 Education Starter Pack|Monthly Package|Education/Training|Monthly|6999|Monthly Support|6 admission posters, 2 stories, 1 course poster and 1 profile banner.|
 Admission Campaign Pack|Monthly Package|Education/Training|Monthly|12999|Monthly Support|10 posters, 2 carousels, 3 reel covers, 2 ad creatives and WhatsApp enquiry poster.|
+Institute Branding Pack|Monthly Package|Education/Training|Monthly|17999|Monthly Support|Logo, visiting card, certificate template, letterhead and 8 launch creatives.|
 Monthly Education Growth Pack|Monthly Package|Education/Training|Monthly|12999|Monthly Support|12 posts, 4 stories, 4 reel covers, captions and monthly content calendar.|
 `.trim()
 
@@ -171,154 +173,124 @@ export const oneTimeServiceRange = `${formatInr(349)} to ${formatInr(
 export const monthlyServiceRange = `${formatOfferPrice(
   getOfferByName('Monthly Starter Pack')
 )} to ${formatOfferPrice(getOfferByName('Full Creative Support Pack'))}`
+const postersOfferCount = publicOffers.filter((offer) => offer.category === 'Posters').length
+const socialOfferCount = publicOffers.filter((offer) => offer.category === 'Social Media').length
+const reelOfferCount = publicOffers.filter((offer) => offer.category === 'Reels').length
+const brandingOfferCount = publicOffers.filter(
+  (offer) => offer.category === 'Branding' || offer.category === 'Stationery'
+).length
+const supportOfferCount = publicOffers.filter((offer) =>
+  ['Business Profile', 'Website', 'Ads Support'].includes(offer.category)
+).length
+const monthlyPackageCount = publicOffers.filter((offer) => offer.offerType === 'Monthly Package').length
 
 export const featuredOfferCards: FeaturedOfferCard[] = [
   {
-    audience: 'Fast everyday business promotion',
-    delivery: '24-hour design lane',
+    audience: 'Individual pricing board',
+    delivery: 'One-time design range',
     highlights: [
-      'Simple business or service poster',
-      'Built for fast offer, notice, or sales updates',
-      'Best starting point for quick-turn promotion',
+      'Basic, standard, premium, offer, festival, post, story and carousel pricing on one page',
+      'Reel cover and thumbnail pricing included for fast social support',
+      'Clear add-on pricing for extra carousel slides',
     ],
-    name: 'Basic Poster Design',
-    posterLabel: 'Quick start poster support',
-    posterTagline: 'Clean layouts. Fast delivery.',
-    posterTitle: 'BASIC\nPOSTER\nDESIGN',
-    price: formatOfferPrice(getOfferByName('Basic Poster Design')),
+    image: '/assets/portfolio/posters-social-pricing.webp',
+    imageAlt: 'ThemeStudios posters and social media creatives pricing board',
+    name: 'Posters & social media creatives',
+    note: `Extra carousel slide ${formatOfferPrice(getOfferByName('Extra Carousel Slide'))}`,
+    price: `${formatInr(349)} to ${formatInr(1499)}`,
     summary:
-      'A clear entry-point service for shops, clinics, salons, food brands, and service businesses that need a practical poster without waiting on a large campaign process.',
-    themeClass: 'theme-start',
+      'The homepage now uses the actual 2026 posters and social creatives board instead of a generic mockup, so buyers can see the real entry-point pricing ladder immediately.',
   },
   {
-    audience: 'Short-form motion and promo reels',
-    delivery: 'Motion-led creative support',
+    audience: 'Motion, branding and stationery',
+    delivery: 'One-time pricing board',
     highlights: [
-      'Animated reel with text, transitions and CTA',
-      'Useful for launch, offer, and awareness campaigns',
-      'Fits businesses moving from static posts into motion',
+      'Business reels, premium reel ads and festival or offer reels',
+      'Logo design, business logo design and branding kit pricing',
+      'Visiting card, letterhead and stationery kit pricing in the same board',
     ],
-    name: 'Standard Business Reel',
-    posterLabel: 'Motion-first campaign support',
-    posterTagline: 'More movement. Stronger attention.',
-    posterTitle: 'STANDARD\nBUSINESS\nREEL',
-    price: formatOfferPrice(getOfferByName('Standard Business Reel')),
+    image: '/assets/portfolio/reels-branding-pricing.webp',
+    imageAlt: 'ThemeStudios reels, branding and identity pricing board',
+    name: 'Reels, branding & identity pricing',
+    price: `${formatInr(999)} to ${formatInr(12999)}`,
     summary:
-      'A stronger reel format for businesses that need more attention than a static poster can generate, while still keeping the creative practical and sales-focused.',
-    themeClass: 'theme-motion',
+      'This board groups short-form video, logo work, and stationery into one relevant service page so the website reflects the real portfolio structure.',
   },
   {
-    audience: 'Launches, identity refreshes, and brand systems',
-    delivery: 'One-time branding kit',
+    audience: 'Profiles, ads and campaign support',
+    delivery: 'One-time and setup pricing board',
     highlights: [
-      'Logo, colors, and font direction',
-      'Built for businesses formalizing their identity',
-      'Stronger starting point than ordering isolated assets one by one',
+      'Business profile posters, Google Business creatives, hero banners and portfolio PDF pricing',
+      'Ad poster, ad reel and campaign creative set pricing',
+      'Meta and Google Ads support shown with setup and management context',
     ],
-    name: 'Logo Branding Kit',
-    posterLabel: 'Identity system package',
-    posterTagline: 'Logo, palette, and brand direction.',
-    posterTitle: 'LOGO\nBRANDING\nKIT',
-    price: formatOfferPrice(getOfferByName('Logo Branding Kit')),
+    image: '/assets/portfolio/business-profile-ad-pricing.webp',
+    imageAlt: 'ThemeStudios business profile, ad support and campaign pricing board',
+    name: 'Business profile, ad support & campaign pricing',
+    note: 'Ad spend stays separate from design and management fees.',
+    price: `${formatInr(499)} to ${formatInr(5999)}`,
     summary:
-      'A one-time identity package for brands that want more than just a logo file and need the core visual system to support social, profile, and launch design work.',
-    themeClass: 'theme-brand',
+      'The live site now shows the actual board covering business profile work, ad creatives, campaign support, and setup fees in one consistent service view.',
   },
   {
-    audience: 'Paid social campaigns and ad-ready support',
-    delivery: 'Cross-post ad support',
+    audience: 'Recurring creative systems',
+    delivery: 'Monthly pricing board',
     highlights: [
-      '3 ad posters or 2 posts plus 1 reel cover',
-      'Useful for paid social testing and offer pushes',
-      'Pairs well with Meta setup or monthly ads support',
+      'Starter, growth, pro, ads creative and full support monthly ladders',
+      'Poster, story, reel cover, carousel and campaign mixes shown visually',
+      'A better fit for brands that need recurring creative consistency',
     ],
-    name: 'Campaign Creative Set',
-    posterLabel: 'Ads creative starter set',
-    posterTagline: 'Campaign-ready assets for paid reach.',
-    posterTitle: 'CAMPAIGN\nCREATIVE\nSET',
-    price: formatOfferPrice(getOfferByName('Campaign Creative Set')),
+    image: '/assets/portfolio/universal-monthly-packages.webp',
+    imageAlt: 'ThemeStudios universal monthly packages pricing board',
+    name: 'Universal monthly packages',
+    price: monthlyServiceRange,
     summary:
-      'A practical pack for businesses that want a coordinated set of creatives for Meta or Instagram campaigns without committing to a full monthly retainer first.',
-    themeClass: 'theme-ads',
-  },
-  {
-    audience: 'Recurring social visibility through the month',
-    delivery: 'Monthly content system',
-    highlights: [
-      '12 posters, 4 stories, 2 reel covers, captions and content calendar',
-      'Best for businesses posting every week',
-      'Balances content volume with manageable monthly scope',
-    ],
-    name: 'Monthly Social Growth Pack',
-    posterLabel: 'Most-used monthly growth lane',
-    posterTagline: 'Steady content. Better monthly visibility.',
-    posterTitle: 'MONTHLY\nSOCIAL\nGROWTH',
-    price: formatOfferPrice(getOfferByName('Monthly Social Growth Pack')),
-    summary:
-      'A dependable monthly system for businesses that need stronger content rhythm than a starter plan, without jumping straight to a full creative retainer.',
-    themeClass: 'theme-monthly',
-  },
-  {
-    audience: 'Brands needing multi-format monthly support',
-    delivery: 'High-coverage monthly retainer',
-    highlights: [
-      '20+ creatives across posters, reels, covers and carousels',
-      'Built for campaign-heavy months and active offer calendars',
-      'Good fit when multiple services need one coordinated system',
-    ],
-    name: 'Full Creative Support Pack',
-    posterLabel: 'Broadest monthly support layer',
-    posterTagline: 'High-output support across formats.',
-    posterTitle: 'FULL\nCREATIVE\nSUPPORT',
-    price: formatOfferPrice(getOfferByName('Full Creative Support Pack')),
-    summary:
-      'The highest-coverage monthly plan for businesses that need campaign continuity, multiple content formats, and one coordinated creative workflow across the month.',
-    themeClass: 'theme-full-support',
+      'This pricing board replaces the old generic monthly visual and shows the actual 2026 recurring package ladder from starter support to full monthly coverage.',
   },
 ]
 
 export const offerCategoryCards: OfferCategoryCard[] = [
   {
-    badge: '5 core services',
+    badge: `${postersOfferCount} core services`,
     name: 'Posters & offer creatives',
     priceBand: `${formatInr(399)} to ${formatInr(1499)}`,
     summary:
       'Business posters, sale creatives, premium campaign posters, and seasonal or occasion-led visuals for everyday promotion.',
   },
   {
-    badge: '6 active services',
+    badge: `${socialOfferCount} active services`,
     name: 'Social posts, stories & catalog visuals',
     priceBand: `${formatInr(349)} to ${formatInr(1499)}`,
     summary:
       'Single posts, WhatsApp status creatives, carousels, cover banners, and catalog-style visuals for social-first businesses.',
   },
   {
-    badge: '5 reel services',
+    badge: `${reelOfferCount} reel services`,
     name: 'Reels, covers & motion promos',
     priceBand: `${formatInr(499)} to ${formatInr(3499)}`,
     summary:
       'Reel covers, animated business reels, festival reels, and stronger ad-style motion creatives for campaigns that need more attention.',
   },
   {
-    badge: '12 branding offers',
+    badge: `${brandingOfferCount} branding offers`,
     name: 'Brand identity, stationery & launch kits',
     priceBand: `${formatInr(999)} to ${formatInr(29999)}`,
     summary:
       'Logo design, stationery, industry-specific branding kits, startup launch packs, and packaged identity support for growing brands.',
   },
   {
-    badge: '10 support offers',
+    badge: `${supportOfferCount} support offers`,
     name: 'Ads, profile support & website visuals',
     priceBand: `${formatInr(699)} to ${formatInr(5999)}`,
     summary:
       'Google Business creatives, profile PDFs, website hero banners, ad posters, reel ads, and setup support for paid promotion.',
   },
   {
-    badge: '23 monthly packs',
+    badge: `${monthlyPackageCount} monthly packs`,
     name: 'Monthly social and campaign systems',
     priceBand: monthlyServiceRange,
     summary:
-      'Recurring support packs across universal, clinic, restaurant, startup, salon, education, retail, and construction categories.',
+      'Recurring support packs across universal, clinic, restaurant, startup, salon, education, retail, and construction categories, including builder, catalog, and institute-focused pack lanes.',
   },
 ]
 
@@ -345,25 +317,25 @@ export const industryOfferCards: IndustryOfferCard[] = [
       'Trust-building posters, doctor or service intro creatives, awareness content, ad support, and healthcare-focused branding kits.',
   },
   {
-    examples: ['Local Shop Starter Pack', 'Retail Monthly Pack'],
+    examples: ['Local Shop Starter Pack', 'Festival Sales Pack', 'WhatsApp Catalog Pack'],
     name: 'Retail & local shops',
     priceBand: `${formatInr(4999)} to ${formatInr(9999)}`,
     summary:
-      'Offer posters, festival pushes, stories, WhatsApp status creatives, and monthly visibility systems for local stores and boutiques.',
+      'Offer posters, festival pushes, stories, monthly retail promotion, and catalog-style creative systems for local stores and boutiques.',
   },
   {
-    examples: ['Education Starter Pack', 'Admission Campaign Pack', 'Monthly Education Growth Pack'],
+    examples: ['Education Starter Pack', 'Institute Branding Pack', 'Monthly Education Growth Pack'],
     name: 'Education & training',
-    priceBand: `${formatInr(6999)} to ${formatInr(12999)}`,
+    priceBand: `${formatInr(6999)} to ${formatInr(17999)}`,
     summary:
-      'Admission posters, course creatives, enquiry pushes, reel covers, and monthly content support for institutes and training centres.',
+      'Admission posters, course creatives, institute branding support, enquiry pushes, reel covers, and monthly content systems for training centres.',
   },
   {
-    examples: ['Construction Starter Pack', 'Real Estate Listing Pack', 'Interior / Texture Painting Pack'],
+    examples: ['Construction Starter Pack', 'Real Estate Listing Pack', 'Builder Branding Pack'],
     name: 'Real estate & construction',
-    priceBand: `${formatInr(7999)} to ${formatInr(14999)}`,
+    priceBand: `${formatInr(7999)} to ${formatInr(24999)}`,
     summary:
-      'Property posters, before-and-after content, service introductions, reel covers, and construction-focused monthly promotion support.',
+      'Property posters, before-and-after content, service introductions, builder branding, brochures, and construction-focused monthly promotion support.',
   },
   {
     examples: ['Startup Basic Launch Pack', 'Startup Brand Identity Pack', 'Startup Premium Launch Pack'],

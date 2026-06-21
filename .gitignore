@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+yarn.lock
+
+# Build outputs
+dist/
+build/
+out/
+
+# Editor cache
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# IDE files
+.env
+.env.local
+.env.*.local
+*.sublime-workspace
+
+# Runtime
+.pnp
+.pnp.js

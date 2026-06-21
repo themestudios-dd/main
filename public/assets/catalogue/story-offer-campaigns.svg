@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Offer campaign story artwork</title>
+  <desc id="desc">A horizontal promotional design showing a clean sale layout with bold offer hierarchy, product focus and contact cues for mobile-friendly campaigns.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1d46"/>
+      <stop offset="48%" stop-color="#0e4ea9"/>
+      <stop offset="100%" stop-color="#0c93dd"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="22%" cy="18%" r="68%">
+      <stop offset="0%" stop-color="#6ad6ff" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#6ad6ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe38e"/>
+      <stop offset="100%" stop-color="#ff9b32"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#07122a" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1250" height="1000" fill="url(#bg)"/>
+  <rect width="1250" height="1000" fill="url(#glow)"/>
+  <circle cx="1060" cy="206" r="186" fill="#ffe38e" opacity="0.1"/>
+  <circle cx="170" cy="860" r="150" fill="#69d8ff" opacity="0.12"/>
+
+  <text x="82" y="90" fill="#dcefff" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="2">THEMESTUDIOS</text>
+  <text x="82" y="122" fill="#9ec6f8" font-family="Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="1.6">Offer campaign concept</text>
+
+  <text x="82" y="254" fill="#ffffff" font-family="Arial, sans-serif" font-size="124" font-weight="900">WEEKEND</text>
+  <text x="82" y="370" fill="url(#gold)" font-family="Arial, sans-serif" font-size="146" font-weight="900">COMBO</text>
+  <text x="82" y="472" fill="#ffffff" font-family="Arial, sans-serif" font-size="90" font-weight="800">SALE</text>
+
+  <text x="84" y="550" fill="#e8f5ff" font-family="Arial, sans-serif" font-size="34" font-weight="700">A clean mobile layout that makes the headline, price and action obvious in one glance.</text>
+
+  <rect x="84" y="612" width="262" height="112" rx="28" fill="#0a285d" stroke="#67d4ff" stroke-width="3"/>
+  <text x="114" y="686" fill="url(#gold)" font-family="Arial, sans-serif" font-size="70" font-weight="900">40% OFF</text>
+
+  <g fill="#eaf6ff" font-family="Arial, sans-serif">
+    <circle cx="100" cy="792" r="12" fill="#67d4ff"/>
+    <text x="128" y="801" font-size="28" font-weight="700">Price first, then offer, then CTA</text>
+    <circle cx="100" cy="846" r="12" fill="#67d4ff"/>
+    <text x="128" y="855" font-size="28" font-weight="700">Built for WhatsApp-sized reading</text>
+    <circle cx="100" cy="900" r="12" fill="#67d4ff"/>
+    <text x="128" y="909" font-size="28" font-weight="700">Simple enough to scan in seconds</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="716" y="92" width="444" height="816" rx="36" fill="#0a1830" stroke="#77dfff" stroke-width="3"/>
+    <rect x="756" y="136" width="364" height="86" rx="26" fill="url(#gold)"/>
+    <text x="824" y="192" fill="#111111" font-family="Arial, sans-serif" font-size="46" font-weight="900">FLASH OFFER</text>
+
+    <text x="760" y="314" fill="#ffffff" font-family="Arial, sans-serif" font-size="80" font-weight="900">BUY 2</text>
+    <text x="760" y="402" fill="#67d4ff" font-family="Arial, sans-serif" font-size="98" font-weight="900">GET 1</text>
+    <text x="760" y="478" fill="#ffffff" font-family="Arial, sans-serif" font-size="72" font-weight="900">FREE</text>
+
+    <circle cx="1032" cy="404" r="104" fill="#f2a843"/>
+    <circle cx="1032" cy="404" r="82" fill="#ffd37d"/>
+    <text x="986" y="392" fill="#0a1830" font-family="Arial, sans-serif" font-size="28" font-weight="900">TODAY</text>
+    <text x="974" y="438" fill="#0a1830" font-family="Arial, sans-serif" font-size="56" font-weight="900">ONLY</text>
+
+    <rect x="772" y="566" width="332" height="154" rx="30" fill="#102a56" stroke="#3a78c8" stroke-width="2"/>
+    <path d="M846 606h180l-26 70h-128z" fill="#f3b04b"/>
+    <rect x="868" y="666" width="140" height="18" rx="9" fill="#f6dd9f"/>
+    <text x="810" y="750" fill="#e9f5ff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Strong price box, short headline, fast CTA</text>
+
+    <rect x="772" y="758" width="332" height="108" rx="26" fill="#0b1a35"/>
+    <text x="814" y="824" fill="#ffffff" font-family="Arial, sans-serif" font-size="46" font-weight="900">ORDER NOW</text>
+  </g>
+</svg>

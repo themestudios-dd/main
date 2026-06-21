@@ -1,0 +1,16 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pkgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2feccf;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#a8b3a9;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="768" fill="#050b0b"/>
+  <rect width="1024" height="768" fill="url(#pkgGrad4)"/>
+  <rect x="150" y="100" width="724" height="568" rx="20" fill="none" stroke="#2feccf" stroke-width="2" opacity="0.25"/>
+  <text x="512" y="250" font-family="Space Grotesk, sans-serif" font-size="64" font-weight="800" fill="#2feccf" text-anchor="middle">STANDARD</text>
+  <text x="512" y="350" font-family="Manrope, sans-serif" font-size="40" fill="#f2cb72" text-anchor="middle">Business Poster</text>
+  <text x="512" y="450" font-family="Manrope, sans-serif" font-size="32" fill="#a8b3a9" text-anchor="middle">Professional & Clean</text>
+  <text x="512" y="550" font-family="Manrope, sans-serif" font-size="36" fill="#2feccf" text-anchor="middle">₹299</text>
+  <text x="512" y="650" font-family="Manrope, sans-serif" font-size="24" fill="#a8b3a9" text-anchor="middle">24-48 hour delivery</text>
+</svg>

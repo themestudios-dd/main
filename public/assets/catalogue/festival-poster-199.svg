@@ -1,0 +1,17 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pkgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f2cb72;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#2feccf;stop-opacity:0.15" />
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="768" fill="#050b0b"/>
+  <rect width="1024" height="768" fill="url(#pkgGrad6)"/>
+  <circle cx="700" cy="150" r="90" fill="#f2cb72" opacity="0.12"/>
+  <circle cx="200" cy="600" r="70" fill="#2feccf" opacity="0.1"/>
+  <rect x="160" y="140" width="704" height="496" rx="20" fill="none" stroke="#f2cb72" stroke-width="2.5" opacity="0.3"/>
+  <text x="512" y="280" font-family="Space Grotesk, sans-serif" font-size="56" font-weight="800" fill="#f2cb72" text-anchor="middle">FESTIVAL</text>
+  <text x="512" y="370" font-family="Manrope, sans-serif" font-size="40" fill="#2feccf" text-anchor="middle">Seasonal Designs</text>
+  <text x="512" y="460" font-family="Manrope, sans-serif" font-size="28" fill="#a8b3a9" text-anchor="middle">Diwali, Pongal & More</text>
+  <text x="512" y="560" font-family="Manrope, sans-serif" font-size="32" fill="#f2cb72" text-anchor="middle">₹199</text>
+</svg>

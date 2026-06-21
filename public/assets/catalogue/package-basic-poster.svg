@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Basic Poster Design branding card</title>
+  <desc id="desc">A clean contemporary branding card in blue and cyan for the Basic Poster Design package with bold layout blocks and entry-tier clarity.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1956b8"/>
+      <stop offset="58%" stop-color="#2578e4"/>
+      <stop offset="100%" stop-color="#38b5ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="18%" cy="16%" r="70%">
+      <stop offset="0%" stop-color="#d6fbff" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#d6fbff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#103474"/>
+      <stop offset="100%" stop-color="#174ea4"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe39a"/>
+      <stop offset="100%" stop-color="#ffb240"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#16386c" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 24px 'Segoe UI', Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+      .display { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 900; letter-spacing: -2px; }
+      .body { font: 700 28px 'Segoe UI', Arial, sans-serif; }
+      .chip { font: 700 24px 'Segoe UI', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" rx="56" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="56" fill="url(#glow)"/>
+  <circle cx="1326" cy="172" r="176" fill="#ffffff" opacity="0.08"/>
+  <circle cx="160" cy="846" r="170" fill="#a4f2ff" opacity="0.1"/>
+  <path d="M0 860c234-84 472-84 714 4s436 88 886-22V1000H0z" fill="rgba(255,255,255,0.08)"/>
+
+  <text x="88" y="96" class="eyebrow" fill="#e9f7ff">ThemeStudios package series</text>
+  <text x="88" y="222" class="display" font-size="126" fill="#ffffff">BASIC</text>
+  <text x="88" y="344" class="display" font-size="138" fill="url(#gold)">POSTER</text>
+  <text x="88" y="466" class="display" font-size="124" fill="#ffffff">DESIGN</text>
+  <text x="90" y="560" class="body" fill="#e8f8ff">A fast-moving entry package for quick offers, daily notices and simple promotional updates.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1040" y="108" width="454" height="784" rx="46" fill="url(#panel)" stroke="rgba(255,255,255,0.16)" stroke-width="3"/>
+    <rect x="1116" y="186" width="302" height="90" rx="26" fill="url(#gold)"/>
+    <text x="1178" y="242" class="display" font-size="50" fill="#0f2858">FAST OFFER</text>
+    <rect x="1116" y="324" width="138" height="138" rx="28" fill="rgba(255,255,255,0.08)"/>
+    <rect x="1280" y="324" width="138" height="138" rx="28" fill="rgba(255,255,255,0.12)"/>
+    <path d="M1152 388h66" stroke="#d4f9ff" stroke-width="14" stroke-linecap="round"/>
+    <path d="M1314 362v62M1282 394h64" stroke="#d4f9ff" stroke-width="12" stroke-linecap="round"/>
+    <rect x="1138" y="546" width="254" height="150" rx="30" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)"/>
+    <path d="M1178 602h174l-26 56h-122z" fill="#ffd07b"/>
+    <rect x="1202" y="650" width="126" height="14" rx="7" fill="#ffffff"/>
+    <text x="1176" y="740" class="body" fill="#eaf8ff" style="font-size:24px">Clean, fast and easy to scan on mobile</text>
+  </g>
+
+  <g>
+    <rect x="88" y="728" width="254" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="132" y="782" class="chip" fill="#ffffff">Fast sale layout</text>
+    <rect x="366" y="728" width="228" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="410" y="782" class="chip" fill="#ffffff">1 revision</text>
+    <rect x="618" y="728" width="228" height="86" rx="26" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="662" y="782" class="chip" fill="#ffffff">Entry package</text>
+  </g>
+</svg>

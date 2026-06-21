@@ -1,0 +1,16 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pkgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2feccf;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#2feccf;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="#050b0b"/>
+  <rect width="1024" height="1024" fill="url(#pkgGrad1)"/>
+  <circle cx="512" cy="300" r="150" fill="#2feccf" opacity="0.15"/>
+  <rect x="200" y="400" width="624" height="300" rx="20" fill="none" stroke="#2feccf" stroke-width="3" opacity="0.3"/>
+  <text x="512" y="480" font-family="Space Grotesk, sans-serif" font-size="72" font-weight="800" fill="#2feccf" text-anchor="middle">GROWTH</text>
+  <text x="512" y="580" font-family="Manrope, sans-serif" font-size="48" fill="#f2cb72" text-anchor="middle">Monthly Pack</text>
+  <text x="512" y="720" font-family="Manrope, sans-serif" font-size="36" fill="#a8b3a9" text-anchor="middle">12 Posters • 4 Stories</text>
+  <text x="512" y="800" font-family="Manrope, sans-serif" font-size="36" fill="#a8b3a9" text-anchor="middle">₹1,499 / month</text>
+</svg>
